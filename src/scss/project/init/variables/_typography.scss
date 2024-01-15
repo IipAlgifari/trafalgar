@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Variable: Typography
+   ========================================================================== */
+
+$font-main: 'Mulish', sans-serif;
+
+// Font
+$font: (
+  family-main: $font-main,
+  48: (
+    font-size: 4.8rem,
+    line-height: 5.6rem,
+  ),
+  40: (
+    font-size: 4.0rem,
+    line-height: 4.6rem,
+  ),
+  36: (
+    font-size: 3.6rem,
+    line-height: 4.8rem,
+  ),
+  34: (
+    font-size: 3.4rem,
+    line-height: 4.6rem,
+  ),
+  32: (
+    font-size: 3.2rem,
+    line-height: 4.2rem,
+  ),
+  30: (
+    font-size: 3.0rem,
+    line-height: 4.4rem,
+  ),
+  24: (
+    font-size: 2.4rem,
+    line-height: 3.2rem,
+  ),
+  22: (
+    font-size: 2.2rem,
+    line-height: 3.2rem,
+  ),
+  20: (
+    font-size: 2rem,
+    line-height: 3rem,
+  ),
+  18: (
+    font-size: 1.8rem,
+    line-height: 2.8rem,
+  ),
+  16: (
+    font-size: 1.6rem,
+    line-height: 2.4rem,
+  ),
+  14: (
+    font-size: 1.4rem,
+    line-height: 2.2rem,
+  ),
+  weight: (
+    light: 300,
+    regular: 400,
+    semi-bold: 600,
+    bold: 700,
+  ),
+);

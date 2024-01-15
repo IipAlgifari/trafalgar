@@ -1,0 +1,213 @@
+// /* ==========================================================================
+// Layout: Header
+// ========================================================================== */
+
+.header {
+  $h: &;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: zi(header);
+  padding: 48px 0;
+  background-color: color(white);
+  transform: all .3s ease;
+  .on-scroll & {
+    padding: 24px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+  }
+  // header scroll down
+  .scroll-down & {
+    transform: translateY(-100%);
+    transition: all .70s ease;
+  }
+  @include large {
+    padding: 40px 0;
+  }
+  @include medium {
+    padding: 20px 0;
+  }
+  @include small {
+    padding: 16px 0;
+  }
+
+  &__wrapper {
+    @include clearfix;
+    @include medium {
+      position: relative;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    width: 30%;
+    float: left;
+    @include medium {
+      float: none;
+      width: 100%;
+      margin: 0;
+    }
+    &__el {
+      display: block;
+      height: 40px;
+      @include small {
+        height: 34px;
+      }
+      @include extra-small {
+        height: 32px;
+      }
+    }
+  }
+
+  //Burger-Menu
+  .burger-menu {
+    display: none;
+    @include medium {
+      display: block;
+      position: absolute;
+      right: -12px;
+      top: -4px;
+    }
+    @include small {
+      top: -8px;
+    }
+  }
+
+  &__menu {
+    width: 70%;
+    float: right;
+    text-align: right;
+    font-size: 0;
+    .show-menu & {
+      transform: none;
+      transition-delay: 10ms;
+    }
+    @include medium {
+      position: fixed;
+      left: 0;
+      top: 72px;
+      padding: 32px 48px;
+      background: color(linear-gradient);
+      width: 100%;
+      text-align: left;
+      height: 100%;
+      z-index: 2;
+      transition: all .35s ease;
+      transform: scaleY(0%);
+      transition-delay: 440ms;
+      transform-origin: top center;
+    }
+    @include small {
+      top: 64px;
+      overflow-y: auto;
+    }
+    @include extra-small {
+      top: 62px;
+    }
+  }
+  &__nav {
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    &__item {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      color: color(hyfen);
+      opacity: .5;
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &--active {
+        color: color(primary);
+        opacity: 1;
+      }
+      @include large {
+        margin-right: 32px;
+      }
+      @include medium {
+        display: block;
+        margin: 0 0 40px;
+        opacity: 0;
+        transform: translateY(-16px);
+        transition: all .3s ease;
+        &:nth-child(1) {
+          transition-delay: 340ms;
+        }
+        &:nth-child(2) {
+          transition-delay: 270ms;
+        }
+        &:nth-child(3) {
+          transition-delay: 210ms;
+        }
+        &:nth-child(4) {
+          transition-delay: 140ms;
+        }
+        &:nth-child(5) {
+          transition-delay: 70ms;
+        }
+        &:nth-child(6) {
+          transition-delay: 0ms;
+        }
+        .show-navigation & {
+          opacity: 1;
+          transform: none;
+          &:nth-child(1) {
+            transition-delay: 370ms;
+          }
+          &:nth-child(2) {
+            transition-delay: 440ms;
+          }
+          &:nth-child(3) {
+            transition-delay: 510ms;
+          }
+          &:nth-child(4) {
+            transition-delay: 580ms;
+          }
+          &:nth-child(5) {
+            transition-delay: 650ms;
+          }
+          &:nth-child(6) {
+            transition-delay: 720ms;
+          }
+        }
+      }
+      @include small {
+        margin-bottom: 32px;
+        font-size: 20px;
+      }
+    }
+    &__link {
+      text-decoration: none;
+      @include font-size(18);
+      font-weight: fw(regular);
+      position: relative;
+      transition: all .3s ease;
+      @include medium {
+        color: color(white);
+        opacity: 1;
+      }
+      &::after {
+        content: '';
+        width: 100%;
+        border-bottom: solid 2.5px color(primary);
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transform-origin: right center;
+        transform: scaleX(0);
+        transition: transform .4s ease;
+      }
+      &:hover {
+        color: color(hyfen);
+        opacity: 1;
+        &::after {
+          transform-origin: left center;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+//-------------------------------------------------------------------------------
+  @name: Leading-Component
+  -------------------------------------------------------------------------------//
+//Leading
+
+div(class=leadingData.reverse ? 'leading leading--reverse': 'leading')
+  .container
+    .leading__wrapper
+      .leading__img
+        ='\n'
+        img.leading__img__el(src=leadingData.leadingImg alt=leadingData.alt)/
+      .leading__txt
+        h2.leading__title
+          | !{leadingData.title}
+        p.leading__desc
+          | !{leadingData.desc}
+        .leading__btn
+          ='\n'
+          a.btn(class=leadingData.btn.class href=leadingData.btn.link)
+            | !{leadingData.btn.txt}
+='\n'

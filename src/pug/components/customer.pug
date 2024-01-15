@@ -1,0 +1,22 @@
+//-------------------------------------------------------------------------------
+  @name: Components-Customer
+  -------------------------------------------------------------------------------//
+
+// customer__item
+.customer__item
+  .customer__creator
+    .customer__creator__img
+      ='\n'
+      img.customer__creator__img__el(src='assets/img/dummy/customer/'+data.img alt=data.name)/
+    .customer__creator__txt
+      h5.customer__name
+        |!{data.name}
+      p.customer__position
+        |!{data.position}
+  .customer__txt
+    p.customer__desc
+      ='\n'
+      q
+        | !{data.desc}
+='\n'
+// /customer__item

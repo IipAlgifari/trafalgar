@@ -1,0 +1,23 @@
+//-------------------------------------------------------------------------------
+  @name: Layout | Our Services
+  @desc: Our Services Trafalgar
+  -------------------------------------------------------------------------------//
+
+.services#ourservices
+  .container
+    .services__head
+      h3.services__title !{dataServices.title}
+      p.services__desc
+        | !{dataServices.description}
+    .services__body
+      .services__wrapper
+        .services__list
+          each val, index in dataServices.list
+            -
+              data = val
+            include ../components/our-services.pug
+        ='\n'
+        .services__btn
+          ='\n'
+          a.btn.btn--secondary(href=dataServices.button.to)
+            | !{dataServices.button.text}

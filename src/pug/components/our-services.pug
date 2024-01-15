@@ -1,0 +1,15 @@
+//-------------------------------------------------------------------------------
+  @name: Components | Our Services
+  @description: Our Services
+  -------------------------------------------------------------------------------//
+
+.services__item
+  .services__box
+    .services__img
+      ='\n'
+      img.services__img__el(src=data.img alt=data.alt)/
+    .services__txt
+      h4.services__txt__title
+        | !{data.subtitle}
+      p.services__txt__desc
+        | !{data.desc}

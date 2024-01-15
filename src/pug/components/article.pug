@@ -1,0 +1,17 @@
+.article__item
+  .article__box
+    .article__img
+      ='\n'
+      img.article__img__el(src=data.articleImg alt=data.alt)/
+      ='\n'
+    .article__txt
+      h4.article__txt__title
+        | !{data.title}
+      p.article__txt__desc
+        | !{data.desc}
+      ='\n'
+      a.article__txt__read-more(href=data.link)
+        ='\n'
+        | !{data.txtLink}
+        ='\n'
+

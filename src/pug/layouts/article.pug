@@ -1,0 +1,18 @@
+//Article
+.article
+  .container
+    .article__head
+      h3.article__title
+        | Check out our latest article
+    .article__wrapper
+      .article__list
+        each val, index in dataArticle.articleItem
+          -
+            data = val
+          include ../components/article.pug
+        ='\n'
+      .article__btn
+        ='\n'
+        a.btn.btn--secondary(href='#') View all
+
+///Article

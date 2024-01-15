@@ -1,0 +1,67 @@
+// /* ==========================================================================
+//    Style Layouts Leading
+//    ========================================================================== */
+
+.leading {
+  $leading: &;
+  padding: 104px 0 120px;
+  background-color: color(white);
+  @include large {
+    padding: 88px 0 64px;
+  }
+  @include medium {
+    padding: 64px 0 48px;
+  }
+  @include small {
+    padding: 48px 0 32px;
+  }
+  &__wrapper {
+    @include clearfix;
+  }
+  &__img {
+    float: left;
+    width: 52%;
+    @include medium {
+      width: 100%;
+      float: none;
+      margin-bottom: 40px;
+    }
+    @include small {
+      margin-bottom: 32px;
+    }
+  }
+  &__txt {
+    float: right;
+    width: 48%;
+    padding: 47.2px 0 47.2px 142px;
+    @include large {
+      padding: 0 0 0 56px;
+    }
+    @include medium {
+      width: 100%;
+      float: none;
+      padding: 0;
+    }
+  }
+  &--reverse {
+    #{$leading} {
+      &__img {
+        float: right;
+      }
+      &__txt {
+        padding: 47.2px 142px 47.2px 0;
+        @include large {
+          padding: 0 0 0 56px;
+        }
+        @include medium {
+          width: 100%;
+          float: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,20 @@
+//-------------------------------------------------------------------------------
+  @name: Component-Banner
+  -------------------------------------------------------------------------------//
+//Banner
+
+.hero-banner__item
+  .container
+    .hero-banner__wrapper
+      .hero-banner__img
+        ='\n'
+        img.hero-banner__img__el(src=data.bannerImg)
+      .hero-banner__txt
+        h2.hero-banner__title
+          | !{data.title}
+        p.hero-banner__desc
+          | !{data.desc}
+        .hero-banner__btn
+          a.btn.btn--primary
+            | !{data.txtBtn}
+='\n'

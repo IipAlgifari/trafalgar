@@ -1,0 +1,79 @@
+// /* ==========================================================================
+// Style: Button
+// ========================================================================== */
+
+.btn {
+  border:  0;
+  outline: 0;
+  padding: 14px 16px;
+  text-decoration: none;
+  @include font-size(18);
+  font-weight: fw(bold);
+  color: color(black);
+  min-width: 200px;
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 55px;
+  transition: all .5s ease;
+  &:hover {
+    background-color: color(primary);
+    color: color(white);
+  }
+  @include small {
+    padding: 12px 40px;
+    min-width: 170px;
+  }
+  @include extra-small {
+    min-width: 160px;
+    padding: 12px 24px;
+    @include font-size(16);
+  }
+  &--primary {
+    background-image: linear-gradient(to right,#458ff6 50%,#67c3f3);
+    background-size: 202% 1px;
+    background-position: left center;
+    color: color(white);
+    border-color: color(white);
+    &:hover {
+      background-position: right center;
+    }
+  }
+  &--secondary {
+    border:  1.4px solid #458ff6;
+    color: color(primary);
+  }
+  &--secondary--arrow {
+    border:  1.4px solid #458ff6;
+    color: color(primary);
+    padding: 14px 24px 14px 16px;
+    position: relative;
+    &:hover::after {
+      background-image: url(../img/icon/arrow-bottom-white.svg);
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url(../img/icon/arrow-bottom.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 31px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s ease;
+      @include small {
+        right: 22px;
+      }
+      @include extra-small {
+        right: 18px;
+      }
+      @include retina {
+        width: 14px;
+        right: 22px;
+      }
+    }
+  }
+}

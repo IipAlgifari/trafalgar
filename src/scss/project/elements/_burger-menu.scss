@@ -1,0 +1,42 @@
+// /* ==========================================================================
+// Element: Burger-Menu
+// ========================================================================== */
+
+.burger-menu {
+  outline: 0;
+  padding: 14px 0;
+  background-color: transparent;
+  border: 0;
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+  .burger-menu__bar {
+    display: block;
+    height: 3px;
+    width: 26px;
+    @include radius(0);
+    margin: 0 auto 4px;
+    background-color: color(hyfen);
+    transition: all 0.3s ease;
+    &:nth-child(1) {
+      width: 14px;
+      margin-left: 11px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      margin-right: 11px;
+      width: 13px;
+    }
+    .show-menu & {
+      &:nth-child(1) {
+        transform: translate(1px, 2.5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translate(0px, 0px) rotate(-45deg);
+      }
+      &:nth-child(3) {
+        transform: translate(-1px, -1px) rotate(45deg);
+      }
+    }
+  }
+}

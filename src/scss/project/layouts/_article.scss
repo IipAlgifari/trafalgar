@@ -1,0 +1,121 @@
+// /* ==========================================================================
+// Layout: Style-Article
+// ========================================================================== */
+
+.article {
+  text-align: center;
+  padding: 96px 0;
+  background-color: color(white);
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    width: 778px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    right: -5%;
+    top: 7%;
+    background-image: url(../img/dummy/bg/element-5.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  @include large {
+    padding: 80px 0 96px;
+  }
+  @include medium {
+    padding: 64px 0 80px;
+  }
+  @include small {
+    padding: 48px 0 64px;
+  }
+  &__head {
+    margin-bottom: 80px;
+    padding-bottom: 32px;
+    @include medium {
+      margin-bottom: 72px;
+    }
+    @include small {
+      margin-bottom: 40px;
+    }
+    @include extra-small {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+    }
+  }
+  &__title {
+    margin-bottom: 0;
+    @include font-size(36);
+    position: relative;
+    text-align: center;
+    @include small {
+      @include font-size(24);
+    }
+    &::after {
+      content: '';
+      width: 56px;
+      height: 3px;
+      display: block;
+      background-color: #000;
+      position: absolute;
+      left: 50%;
+      bottom: -32px;
+      transform: translateX(-50%);
+      border-radius: 2px;
+      @include extra-small {
+        bottom: -24px;
+      }
+    }
+  }
+  &__wrapper {
+    font-size: 0;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      width: 132px;
+      height: 116px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: -50px;
+      background-image: url(../img/dummy/bg/element-1.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  &__list {
+    white-space: nowrap;
+    visibility: visible;
+    margin: 0 auto 72px;
+    position: relative;
+    &::-webkit-scrollbar {
+      width: 0;
+      display: none;
+      -webkit-appearance: none;
+      z-index: -1;
+    }
+    @include large {
+      margin-right: -12px;
+      margin-left: -12px;
+    }
+    @include medium {
+      margin-right: -32px;
+      margin-left: -32px;
+      margin-bottom: 8px;
+      padding: 0 0 40px 32px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    @include small {
+      margin-left: -24px;
+      margin-right: -24px;
+      padding: 0 0 40px 24px;
+    }
+  }
+  &__btn {
+    text-align: center;
+  }
+}
+
+

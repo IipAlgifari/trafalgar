@@ -1,0 +1,59 @@
+// /* ==========================================================================
+//    Style Components Leading
+//    ========================================================================== */
+
+.leading {
+  &__img {
+    &__el {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 72px;
+    @include font-size(36);
+    position: relative;
+    &::after {
+      content: '';
+      width: 56px;
+      height: 2px;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -32px;
+      background-color: color(black);
+      border-radius: 10px;
+      @include small {
+        bottom: -20px;
+      }
+    }
+    @include large {
+      margin-bottom: 64px;
+    }
+    @include medium {
+      @include font-size(36);
+      margin-bottom: 56px;
+    }
+    @include small {
+      @include font-size(30);
+      margin-bottom: 40px;
+    }
+    @include extra-small {
+      @include font-size(24);
+    }
+  }
+  &__desc {
+    margin-bottom: 40px;
+    @include font-size(18);
+    color: color(secondary);
+    @include large {
+      margin-bottom: 36px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
+    @include extra-small {
+      @include font-size(16);
+    }
+  }
+}

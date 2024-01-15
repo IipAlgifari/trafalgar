@@ -1,0 +1,262 @@
+/* ==========================================================================
+Layout: Style-Customer
+========================================================================== */
+@mixin show-customer {
+  .customer {
+    &__creator,
+    &__txt {
+      opacity: 1;
+      transform: none;
+    }
+    &__txt {
+      transition-delay: 200ms;
+    }
+  }
+}
+
+.customer {
+  $c: &;
+  opacity: 1;
+  padding: 120px 0 144px;
+  @include large {
+    padding: 80px 0 120px;
+  }
+  @include medium {
+    padding: 64px 0 96px;
+  }
+  @include small {
+    padding: 48px 0 72px;
+  }
+  @include extra-small {
+    padding: 24px 0 56px;
+  }
+  &__box {
+    background: color(linear-gradient);
+    border-radius: 24px;
+    color: color(white);
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    padding: 64px 0 88px;
+    @include large {
+      padding: 56px 0 64px;
+    }
+    @include medium {
+      padding: 48px 0 56px;
+    }
+    @include small {
+      padding: 40px 0 40px;
+    }
+    @include extra-small {
+      padding: 32px 0 24px;
+    }
+    &::after {
+      content: '';
+      display: block;
+      background-image: url('../img/dummy/bg/Group-1.svg');
+      width: 130px;
+      height: 115px;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: 40px;
+      left: -50px;
+      z-index: -1;
+      background-size: contain;
+      @include large {
+        width: 100px;
+        height: 99.07px;
+        left: -40px;
+      }
+      @include small {
+        width: 80px;
+        height: 79.26px;
+        left: -32px;
+      }
+    }
+    &::before {
+      content: '';
+      display: block;
+      background-image: url('../img/dummy/bg/Group.svg');
+      width: 130px;
+      height: 115px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -11px;
+      right: -50px;
+      z-index: 1;
+      background-size: contain;
+      @include large {
+        top: -8px;
+        right: -20px;
+        width: 100px;
+        height: 99.07px;
+      }
+      @include small {
+        width: 80px;
+        height: 79.26px;
+      }
+    }
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 56px;
+    padding: 0 24px;
+    @include medium {
+      margin-bottom: 40px;
+      padding: 0 16px;
+    }
+    @include small {
+      @include font-size(32);
+    }
+    @include extra-small {
+      @include font-size(20);
+      margin-bottom: 32px;
+    }
+    &::after {
+      content: '';
+      display: block;
+      border-radius: 6px;
+      width: 56px;
+      margin: 32px auto 0;
+      background-color: color(white);
+      border: 1px solid color(white);
+      @include small {
+        margin-top: 24px;
+      }
+      @include extra-small {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__list {
+    #{$c} {
+      &__item {
+        padding: 0 120px;
+        @include large {
+          padding: 0 88px;
+        }
+        @include small {
+          padding: 0 32px;
+        }
+        @include extra-small {
+          padding: 0 24px;
+        }
+      }
+      &__creator {
+        opacity: 0;
+        transform: translateX(-32px);
+        transition: all .65s ease 0s;
+      }
+      &__txt {
+        opacity: 0;
+        transform: translateX(32px);
+        transition: all .65s ease 0s;
+      }
+    }
+    &--single-show {
+      @include show-customer;
+    }
+    &.owl-carousel {
+      .owl-item {
+        &.active {
+          @include show-customer;
+        }
+      }
+      .owl-dots {
+        position: absolute;
+        bottom: -126px;
+        line-height: 1;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        font-size: 0;
+        @include large {
+          bottom: -110px;
+        }
+        @include small {
+          bottom: -86px;
+        }
+        @include extra-small {
+          bottom: -70px;
+        }
+        button {
+          width: 10px;
+          height: 10px;
+          background-color: rgba(color(primary),.3);
+          outline: 0;
+          border: 0;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 16px;
+          border-radius: 50%;
+          transition: all .3s ease;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.active {
+            background-color: color(primary);
+          }
+          @include extra-small {
+            width: 8px;
+            height: 8px;
+            margin-right: 12px;
+          }
+        }
+      }
+      .owl-nav {
+        button {
+          width: 28px;
+          height: 18px;
+          background-size: 28px auto;
+          background-repeat: no-repeat;
+          position: absolute;
+          bottom: -130px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all .3 ease;
+          @include large {
+            bottom: -114px;
+          }
+          @include small {
+            bottom: -90px;
+          }
+          @include extra-small {
+            bottom: -76px;
+          }
+          span {
+            display: none;
+          }
+          &.disabled {
+            opacity: .4;
+          }
+          &.owl-prev {
+            background-image: url('../img/icon/arrow-prev.svg');
+            margin-left: -146px;
+            @include medium {
+              margin-left: -122px;
+            }
+            @include extra-small {
+              margin-left: -100px;
+            }
+          }
+          &.owl-next {
+            background-image: url('../img/icon/arrow-right.svg');
+            margin-left: 146px;
+            @include medium {
+              margin-left: 122px;
+            }
+            @include extra-small {
+              margin-left: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

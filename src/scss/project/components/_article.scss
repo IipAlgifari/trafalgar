@@ -1,0 +1,118 @@
+// /* ==========================================================================
+// Components: Article
+// ========================================================================== */
+
+.article {
+  $a: &;
+  &__item {
+    max-width: 33.3333333%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: transparent;
+    margin-right: 36px;
+    text-align: left;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include large {
+      margin-right: 0;
+      padding: 0 12px;
+    }
+    @include medium {
+      white-space: normal;
+      max-width: initial;
+      padding: 0;
+      margin-right: 24px;
+      &:last-child {
+        margin-right: 24px;
+      }
+    }
+  }
+  &__box {
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: color(white);
+    box-shadow: 10px 40px 50px rgb(0 0 0 / 5%);
+    &:hover {
+      #{$a} {
+        &__img__el {
+          transform: scale(1.05);
+        }
+        &__txt__title {
+          color: color(primary);
+        }
+        &__txt__read-more {
+          &::after {
+            right: -30px;
+          }
+        }
+      }
+    }
+    @include medium {
+      max-width: 320px;
+      box-shadow:  8px 24px 32px rgb(0 0 0 / 5%);
+    }
+    @include small {
+      max-width: 300px;
+    }
+    @include extra-small {
+      max-width: 280px;
+    }
+  }
+  &__img {
+    overflow: hidden;
+    &__el {
+      display: block;
+      transition: all .5s ease;
+      height: 100%;
+    }
+  }
+  &__txt {
+    padding: 24px 24px 92px;
+    min-height: 272px;
+    position: relative;
+    white-space: normal;
+    @include large {
+      height: 300px
+    }
+    &__title {
+      @include font-size(22);
+      margin-bottom: 16px;
+      transition: all .4s ease;
+      @include small {
+        @include font-size(20);
+      }
+    }
+    &__desc {
+      @include font-size(16);
+      color: color(secondary);
+      margin-bottom: 0;
+      font-weight: fw(light);
+    }
+    &__read-more {
+      text-decoration: none;
+      @include font-size(18);
+      color: color(primary);
+      font-weight: fw(semi-bold);
+      position: absolute;
+      bottom: 32px;
+      &::after {
+        content: '';
+        display: block;
+        width: 14px;
+        height: 9px;
+        position: absolute;
+        right: -24px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url(../img/icon/arrow-right.svg);
+        background-repeat: no-repeat;
+        transition: all .4s ease;
+      }
+      @include small {
+        @include font-size(16);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+//-------------------------------------------------------------------------------
+  @name: Layouts-Customer
+  -------------------------------------------------------------------------------//
+
+//customer
+.customer(id=customerList.id)
+  .container
+    .customer__box
+      h2.customer__title
+        | !{customerList.title}
+      .customer__list.js-customer-carousel
+        each val, index in customerList.list
+          -
+            data = val
+          include ../components/customer.pug
+
+
+='\n'
+// /customer

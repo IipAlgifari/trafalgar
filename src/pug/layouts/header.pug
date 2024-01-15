@@ -1,0 +1,66 @@
+//-------------------------------------------------------------------------------
+  @name: Header
+  -------------------------------------------------------------------------------//
+
+//Header
+-
+  othernav = [
+    {
+      txt: 'Home',
+      link: '#home'
+    },
+    {
+      txt: 'Our Services',
+      link: '#ourservices'
+    },
+    {
+      txt: 'Find a doctor',
+      link: '#findadoctor'
+    },
+    {
+      txt: 'Apps',
+      link: '#apps'
+    },
+    {
+      txt: 'Testimonial',
+      link: '#testimonial'
+    },
+    {
+      txt: 'About us',
+      link: '#aboutus'
+    }
+  ]
+
+.header
+  .container
+    .header__wrapper
+      ='\n'
+      a.header__logo.js-header__logo(href='#home')
+        ='\n'
+        img.header__logo__el(src='assets/img/logo/logo.svg' alt='Logo')/
+        ='\n'
+      //burger-menu
+      ='\n'
+      button.burger-menu.js-burger-menu(type='button')
+        ='\n'
+        each val in [1, 2, 3]
+          ='\n'
+          span.burger-menu__bar
+          ='\n'
+      //header__menu
+      .header__menu.js-header-nav
+        ul.header__nav
+          each val, index in othernav
+            li.header__nav__item(class=(index == 0 ? 'header__nav__item--active' : ''))
+              ='\n'
+              a.header__nav__link(href=val.link)
+                | !{val.txt}
+='\n'
+// /header
+='\n\n'
+
+
+
+
+
+

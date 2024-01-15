@@ -1,0 +1,135 @@
+// /* ==========================================================================
+// layouts: Our Services
+// ========================================================================== */
+
+.services {
+  padding: 80px 0 104px 0;
+  transition: all .4s ease;
+  background-color: color(white);
+  overflow: hidden;
+  @include large {
+    padding: 72px 0 88px;
+  }
+  @include medium {
+    padding: 64px 0 72px;
+  }
+  @include small {
+    padding: 56px 0 64px;
+  }
+  @include extra-small {
+    padding: 48px 0 56px;
+  }
+  &__head {
+    text-align: center;
+    max-width: 952px;
+    margin: 0 auto 56px;
+    @include large {
+      margin-bottom: 40px;
+    }
+  }
+  &__title {
+    margin-bottom: 72px;
+    @include font-size(36);
+    position: relative;
+    @include large {
+      margin-bottom: 64px;
+    }
+    @include medium {
+      margin-bottom: 54px;
+    }
+    @include small {
+      @include font-size(32);
+      margin-bottom: 48px;
+    }
+    @include extra-small {
+      @include font-size(24);
+    }
+    &::after {
+      content: '';
+      width: 56px;
+      height: 2px;
+      background-color: color(black);
+      position: absolute;
+      left: 50%;
+      bottom: -32px;
+      transform: translateX(-50%);
+      border-radius: 5px;
+      @include large {
+        bottom: -24px;
+      }
+    }
+  }
+  &__desc {
+    padding: 0 64px;
+    margin: 0;
+    @include font-size(18);
+    color: color(secondary);
+    font-weight: fw(light);
+    @include large {
+      padding: 0;
+    }
+    @include small {
+      @include font-size(16);
+    }
+  }
+  &__body {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -25%;
+      left: -506px;
+      width: 1118px;
+      height: 968px;
+      background: url(../img/dummy/bg/element-2.svg) no-repeat center/100%;
+      z-index: 1;
+      @include medium {
+        top: -18%;
+      }
+      @include small {
+        left: -331px;
+        top: -16%;
+        width: 743px;
+        height: 748px;
+      }
+      @include extra-small {
+        left: -404px;
+        top: -5%;
+      }
+      @include retina {
+        top: -9%;
+      }
+    }
+    &::after {
+      content: '';
+      width: 132px;
+      height: 116px;
+      display: block;
+      position: absolute;
+      right: -50px;
+      top: 320px;
+      background-image: url(../img/dummy/bg/element-1.svg);
+      background-repeat: no-repeat;
+      z-index: 1;
+      @include extra-small {
+        background-size: 100px;
+        right: -64px;
+        top: 328px;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  &__list {
+    font-size: 0;
+    margin: 0 -16px 72px;
+    @include large {
+      margin-bottom: 64px;
+    }
+    @include medium {
+      margin-bottom: 40px;
+    }
+  }
+}

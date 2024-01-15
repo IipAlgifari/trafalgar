@@ -1,0 +1,68 @@
+//-------------------------------------------------------------------------------
+  @name: Footer
+  -------------------------------------------------------------------------------//
+
+//footer
+.footer
+  .footer__wrapper
+    .container
+      .footer__box
+        .footer__menu.js-footer-accordion
+          //company
+          .footer__menu__wrapper
+            h5.footer__title Company
+            ul.footer__nav
+              -
+                otherNav = [
+                  {txt:'About', link: '#about'},
+                  {txt:'Testimonials', link: '#testimonials'},
+                  {txt:'Find a doctor', link: '#findadoctor'},
+                  {txt:'Apps', link: '#apps'}
+                ]
+              each val in otherNav
+                li.footer__nav__item
+                  ='\n'
+                  a.footer__nav__link(href=val.link)
+                    | !{val.txt}
+          //region
+          .footer__menu__wrapper
+            h5.footer__title Region
+            ul.footer__nav
+              -
+                otherNavReg = [
+                  {txt:'Indonesia', link: '#indonesia'},
+                  {txt:'Singapore', link: '#singapore'},
+                  {txt:'Hongkong', link: '#hongkong'},
+                  {txt:'Canada', link: '#canada'}
+                ]
+              each val in otherNavReg
+                li.footer__nav__item
+                  ='\n'
+                  a.footer__nav__link(href=val.link)
+                    | !{val.txt}
+          //help
+          .footer__menu__wrapper
+            h5.footer__title Help
+            ul.footer__nav
+              -
+                otherNavHel = [
+                  {txt:'Help center', link: '#helpcenter'},
+                  {txt:'Contact support', link: '#contactsupp'},
+                  {txt:'Intructions', link: '#intruction'},
+                  {txt:'How it works', link: '#howitswork'}
+                ]
+              each val in otherNavHel
+                li.footer__nav__item
+                  ='\n'
+                  a.footer__nav__link(href=val.link)
+                    | !{val.txt}
+        ='\n'
+        // footer txt
+        .footer__txt
+          ='\n'
+          a.footer__logo(href='#home')
+            ='\n'
+            img.footer__logo__el(src='assets/img/logo/logo-putih.svg' alt='Logo')/
+            ='\n'
+          p.footer__desc Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone
+          p.footer__copyright &copy;Trafalgar PTY LTD 2020. All rights reserved

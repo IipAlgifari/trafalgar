@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Layout: Footer
+   ========================================================================== */
+
+.footer {
+  background: color(linear-gradient);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: color(white);
+  &::before {
+    content: "";
+    background-image: url(../img/dummy/bg/element-footer.svg);
+    background-repeat: no-repeat;
+    -moz-background-size: contain;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    position: absolute;
+    width: 132px;
+    height: 115px;
+    top: -72px;
+    right: 88px;
+    @include large {
+      top: -56px;
+      right: 56px;
+      width: 96px;
+      height: 88.46px;
+    }
+    @include small {
+      top: -48px;
+      right: 10px;
+      width: 72px;
+      height: 70.77px;
+    }
+  }
+  &__wrapper {
+    padding: 96px 0 104px;
+    overflow: hidden;
+    position: relative;
+    @include large {
+      padding: 72px 0 80px;
+    }
+    @include small {
+      padding: 56px 0 64px;
+    }
+    @include extra-small {
+      padding-top: 48px;
+    }
+  }
+  & .container {
+    &::after {
+      content: "";
+      background-image: url(../img/dummy/bg/element-footer-2.svg);
+      background-repeat: no-repeat;
+      -moz-background-size: contain;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      width: 130px;
+      height: 115px;
+      bottom: -40px;
+      left: -20px;
+      @include large {
+        width: 100px;
+        height: 88.46px;
+        bottom: -30px;
+        left: -10px;
+      }
+      @include small {
+      width: 80px;
+      bottom: -25px;
+      height: 70.77px;
+      }
+    }
+  }
+  &__box {
+    @include clearfix;
+  }
+  &__menu {
+    float: right;
+    width: 69%;
+    text-align: right;
+    font-size: 0;
+    &__wrapper {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 144px;
+      text-align: left;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__title {
+    @include font-size(20);
+    margin-bottom: 20px;
+  }
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &__item {
+      @include font-size(18);
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      text-decoration: none;
+    }
+  }
+  &__txt {
+    float: left;
+    width: 31%;
+  }
+}
