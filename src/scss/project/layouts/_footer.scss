@@ -9,6 +9,9 @@
   bottom: 0;
   width: 100%;
   color: color(white);
+  @include medium {
+    position: relative;
+  }
   &::before {
     content: "";
     background-image: url(../img/dummy/bg/element-footer.svg);
@@ -69,9 +72,9 @@
         left: -10px;
       }
       @include small {
-      width: 80px;
-      bottom: -25px;
-      height: 70.77px;
+        width: 80px;
+        bottom: -25px;
+        height: 70.77px;
       }
     }
   }
@@ -88,6 +91,9 @@
       vertical-align: top;
       margin-right: 144px;
       text-align: left;
+      @include medium {
+        margin-right: 48px;
+      }
       &:last-child {
         margin-right: 0;
       }

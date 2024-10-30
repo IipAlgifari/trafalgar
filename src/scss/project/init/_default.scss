@@ -9,6 +9,9 @@ body {
   color: color(black);
   padding-bottom: 406px;
   @include font-size(16);
+  @include medium {
+    padding-bottom: 120px;
+  }
   &.rm-scroll {
     overflow: hidden;
     touch-action: none;
