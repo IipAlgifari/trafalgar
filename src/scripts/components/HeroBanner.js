@@ -4,30 +4,38 @@
 --------------------------------------------------------------------------------- */
 
 const HeroBanner = (() => {
-  // - handleHeroBanner
-  const handleRunCarousel = () => {
+  // Default carousel options
+  const defaultOptions = {
+    loop: false,
+    rewind: true,
+    nav: false,
+    items: 1,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    autoplayTimeout: 5000,
+    autoHeight: true,
+    autoplayHoverPause: false,
+    animateOut: "fadeOut",
+  };
+
+  // - handleRunCarousel
+  const handleRunCarousel = (options = {}) => {
     const _selector = $(".js-hero-banner");
     const _itemLength = $(".js-hero-banner .hero-banner__item").length;
 
-    //destroy carosuel
+    if (_itemLength < 1) return; // Early return if no items
+
+    // Destroy existing carousel if initialized
     if (_selector.hasClass("owl-carousel")) {
       _selector.owlCarousel("destroy").removeClass("owl-carousel");
     }
 
-    // run
+    // Run carousel if there are multiple items
     if (_itemLength > 1) {
       _selector.addClass("owl-carousel").owlCarousel({
-        loop: false,
-        rewind: true,
-        nav: false,
-        items: 1,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        autoplayTimeout: 5000,
-        autoHeight: true,
-        autoplayHoverPause: true,
-        animateOut: "fadeOut",
+        ...defaultOptions,
+        ...options, // Override default options with custom ones if provided
       });
     } else {
       _selector.addClass("hero-banner--single-show");
@@ -35,9 +43,10 @@ const HeroBanner = (() => {
   };
 
   // - init
-  const init = () => {
-    if ($(".js-hero-banner").length) {
-      handleRunCarousel();
+  const init = (customOptions = {}) => {
+    const bannerExists = $(".js-hero-banner").length > 0;
+    if (bannerExists) {
+      handleRunCarousel(customOptions);
     }
   };
 

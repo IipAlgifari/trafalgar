@@ -2,7 +2,7 @@
 import { Scrolllable, BrowserCheck } from "utilities";
 
 // --- components
-import { Example, Header, HeroBanner, Customer } from "components";
+import { Example, Header, HeroBanner, Customer, Reveal } from "components";
 
 // --- App
 const App = (() => {
@@ -34,6 +34,7 @@ const App = (() => {
       Example.init();
       HeroBanner.init();
       Customer.init();
+      Reveal.init();
     })(jQuery);
   };
 

@@ -1,10 +1,10 @@
-// /* ==========================================================================
-// Style: Hero-Banner
-// ========================================================================== */
+/* ==========================================================================
+ Style: Hero-Banner
+========================================================================== */
 
 .hero-banner {
   &__item {
-    transition: all .7s ease;
+    transition: all 0.7s ease;
   }
   &__wrapper {
     @include clearfix;
@@ -14,7 +14,7 @@
     width: 60%;
     overflow: hidden;
     padding-left: 74px;
-    transition: all .80s ease .55s;
+    transition: all 0.8s ease 0.55s;
     @include large {
       padding-left: 0;
     }
@@ -30,6 +30,7 @@
       display: block;
       width: 100%;
       height: 100%;
+      transition: all 0.3s ease;
       @include medium {
         max-width: 480px;
         margin: 0 auto;
@@ -40,7 +41,7 @@
     float: left;
     width: 40%;
     padding: 137px 34px 137px 0;
-    transition: all .75s ease .35s;
+    transition: all 0.75s ease 0.35s;
     .main-site--hide & {
       opacity: 0;
       transform: translateX(-16px);
@@ -89,5 +90,3 @@
     }
   }
 }
-
-

@@ -2,6 +2,28 @@
 // layouts: Hero-Banner
 // ========================================================================== */
 
+// Warna dan Variabel Umum
+$white: #fff;
+$primary-color: #007bff;
+
+// Mixins Umum
+@mixin transition($property: all, $duration: 0.5s, $ease: ease-in-out) {
+  transition: #{$property} #{$duration} #{$ease};
+}
+
+@mixin responsive-bg-size($small, $medium, $large) {
+  @include extra-small {
+    background-size: #{$small};
+  }
+  @include small {
+    background-size: #{$medium};
+  }
+  @include large {
+    background-size: #{$large};
+  }
+}
+
+// Mixin untuk Menampilkan Hero Banner dengan Transisi Lebih Halus
 @mixin show-hero-banner {
   .hero-banner {
     &__img,
@@ -9,96 +31,96 @@
     &__desc,
     &__btn {
       opacity: 1;
-      transform: none;
-      transition: all .3s ease;
+      transform: translateY(0); // Menambahkan transformasi naik ke atas
+      @include transition(all, 0.6s);
     }
     &__title {
-      transition-delay: 450ms;
+      transition-delay: 300ms;
     }
     &__desc {
-      transition-delay: 750ms;
+      transition-delay: 500ms;
     }
     &__btn {
-      transition-delay: 1050ms;
+      transition-delay: 700ms;
     }
     &__img {
-      transition-delay: 1350ms;
+      transition-delay: 900ms;
       @include medium {
-        transition-delay: 150ms;
+        transition-delay: 200ms;
       }
     }
   }
 }
 
+// Gaya Hero Banner Utama
 .hero-banner {
-  $b: &;
-  padding: 24px 0 80px 0;
-  transition: all .6s ease;
-  background-color: color(white);
-  background-image: url(../img/dummy/bg/element-1.svg);
+  padding: 24px 0 80px;
+  @include transition(all, 0.8s); // Transisi lebih panjang untuk elemen utama
+  background-color: $white;
+  background-image: url("../img/dummy/bg/element-1.svg");
   background-repeat: no-repeat;
-  background-size: 130px auto;
   background-position: -50px top;
-  @include large {
-    padding: 24px 0 80px;
-    background-size: 110px auto;
-  }
-  @include small {
-    padding: 16px 0 64px;
-    background-size: 90px auto;
-    background-position: -30px top;
-  }
-  @include extra-small {
-    background-size: 70px auto;
-  }
+  @include responsive-bg-size("70px auto", "90px auto", "110px auto");
+
+  // Responsif Tambahan
   @include retina {
-    padding: 16px 0 36px 0;
+    padding: 16px 0 36px;
   }
-  #{$b} {
-    &__img,
-    &__title,
-    &__desc,
-    &__btn {
-      opacity: 0;
-      transition: all .4s ease;
-    }
-    &__img {
-      transform: translateX(32px);
-    }
-    &__title,
-    &__desc,
-    &__btn {
-      transform: translateX(-32px);
-    }
+
+  // Keadaan Normal: Semua Elemen di Luar Tampilan
+  &__img,
+  &__title,
+  &__desc,
+  &__btn {
+    opacity: 0;
+    @include transition(0.6s);
   }
+
+  &__img {
+    transform: translateY(32px); // Elemen bergerak dari bawah ke atas
+    @include transition(0.6s, ease-in-out);
+  }
+
+  &__title,
+  &__desc,
+  &__btn {
+    transform: translateY(-32px); // Elemen bergerak dari atas ke posisi normal
+    @include transition(0.6s, ease-in-out);
+  }
+
   &--single-show {
     @include show-hero-banner;
   }
-  // show > 1 item
+
+  // Carousel untuk Multiple Items
   &.owl-carousel {
     .owl-item {
       &.active {
         @include show-hero-banner;
       }
     }
+
     .owl-dots {
       text-align: center;
       width: 100%;
       position: absolute;
       left: 0;
       bottom: 24px;
+
       .owl-dot {
-        background-color: color(primary);
+        background-color: $primary-color;
         width: 8px;
         height: 8px;
         margin-right: 8px;
         border-radius: 4px;
         opacity: 0.2;
-        transition: all .4s ease;
+        @include transition(all, 0.4s, ease-in-out); // Menggunakan ease-in-out
         vertical-align: middle;
+
         &:last-child {
           margin-right: 0;
         }
+
         &.active {
           opacity: 1;
           width: 32px;

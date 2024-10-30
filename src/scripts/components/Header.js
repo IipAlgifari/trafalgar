@@ -30,10 +30,12 @@ const Header = (() => {
     if (status) {
       $("body").removeClass("show-menu");
       selector.removeClass("show");
+      $(".js-header-nav").removeClass("show-navigation"); // Menghapus kelas saat ditutup
       Scrolllable.enable();
     } else {
       $("body").addClass("show-menu");
       selector.addClass("show");
+      $(".js-header-nav").addClass("show-navigation"); // Menambahkan kelas saat dibuka
       Scrolllable.disable();
     }
   };
@@ -55,7 +57,7 @@ const Header = (() => {
       if (_target !== "#home") {
         _targetPosition = $(_target).offset().top;
         if ($(window).scrollTop() > _targetPosition) {
-          // _targetPosition = _targetPosition - $('.header').outerHeight();
+          _targetPosition = _targetPosition - $(".header").outerHeight();
           _targetPosition -= $(".header").outerHeight();
         }
       }
