@@ -8,13 +8,16 @@
     .hero-banner__wrapper
       .hero-banner__img
         ='\n'
-        img.hero-banner__img__el(src=data.bannerImg)
+        img.hero-banner__img__el(src=data.bannerImg, alt=data.title)/
+        ='\n'
       .hero-banner__txt
         h2.hero-banner__title
           | !{data.title}
         p.hero-banner__desc
           | !{data.desc}
         .hero-banner__btn
+          ='\n'
           a.btn.btn--primary
             | !{data.txtBtn}
+          ='\n'
 ='\n'

@@ -24,7 +24,7 @@ const HeroBanner = (() => {
     const _selector = $(".js-hero-banner");
     const _itemLength = $(".js-hero-banner .hero-banner__item").length;
 
-    if (_itemLength < 1) return; // Early return if no items
+    if (_itemLength < 1) return; //
 
     // Destroy existing carousel if initialized
     if (_selector.hasClass("owl-carousel")) {

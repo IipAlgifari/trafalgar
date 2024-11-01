@@ -6,13 +6,13 @@
 const Reveal = (() => {
   // --- handleRevealConfig
   const handleRevealConfig = (
-    delay = 50,
-    distance = "24px",
-    interval = 50,
+    delay = 70,
+    distance = "32px",
+    interval = 70,
     origin = "bottom"
   ) => {
     const _config = {
-      duration: 900,
+      duration: 2000,
       distance: distance,
       delay: delay,
       interval: interval,
@@ -38,9 +38,39 @@ const Reveal = (() => {
     if ($(window).width() >= 992.98) {
     }
 
+    // -- leading
+    ScrollReveal().reveal(
+      ".leading__img",
+      handleRevealConfig(70, "80px", 60, "left")
+    );
+    ScrollReveal().reveal(
+      ".leading__title",
+      handleRevealConfig(70, "80px", 60, "right")
+    );
+    ScrollReveal().reveal(
+      ".leading__desc",
+      handleRevealConfig(70, "80px", 60, "right")
+    );
+    ScrollReveal().reveal(".leading__btn", handleRevealConfig());
+
+    // -- customer
+    ScrollReveal().reveal(".article__item", handleRevealConfig());
+
     // -- footer
     ScrollReveal().reveal(
       ".footer__copyright",
+      handleRevealConfig(55, "24px", 50, "bottom")
+    );
+    ScrollReveal().reveal(
+      ".footer__menu__wrapper",
+      handleRevealConfig(55, "24px", 50, "right")
+    );
+    ScrollReveal().reveal(
+      ".footer__desc",
+      handleRevealConfig(55, "24px", 50, "left")
+    );
+    ScrollReveal().reveal(
+      ".footer__logo",
       handleRevealConfig(55, "24px", 50, "bottom")
     );
 
